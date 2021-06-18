@@ -15,5 +15,6 @@
     chart_version: 3.4.4
     values: "{{ lookup('template', 'values.yaml.j2', variable_start_string='[%', variable_end_string='%]') | from_yaml | combine(mongodb_chart_values, recursive=True) }}"
     wait: yes
-    wait_timeout: 10m
+    wait_timeout: 1m
+    # wait_timeout: 10m
   register: mongodb_installed
